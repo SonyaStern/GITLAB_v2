@@ -19,7 +19,7 @@ public class SyncTest {
   public void change() {
 
     lock.lock();
-    synchronized (lock) {
+    if (lock.tryLock()){
       try {
         try {
           Thread.sleep(1000);
